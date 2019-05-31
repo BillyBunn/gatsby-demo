@@ -6,6 +6,9 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `My First Gatsby Site`,
+  },
   plugins: [
     `gatsby-plugin-emotion`,
     {

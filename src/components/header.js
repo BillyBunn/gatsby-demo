@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
 const HorizontalNav = styled.nav`
-> ul {
+  > ul {
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
@@ -15,7 +15,7 @@ const HorizontalNav = styled.nav`
       > a {
       }
       &:first-child {
-        ${'' /* margin-right: 0; */}
+        ${"" /* margin-right: 0; */}
       }
     }
   }
@@ -30,7 +30,6 @@ const Nav = props => (
     </ul>
   </HorizontalNav>
 )
-
 
 const Title = props => (
   <Link
@@ -50,16 +49,30 @@ const Title = props => (
   </Link>
 )
 
-export default props => (
-  <header>
-    <Title>Site Title</Title>
+export default props => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+  return (
+    <header>
+      {/* <Title>Title</Title> */}
+      <Title>{data.site.siteMetadata.title}</Title>
 
-    <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/about/">About</Link>
-      <Link to="/contact/">Contact</Link>
-      <Link to="/about-css-modules/">CSS Modules</Link>
-      <Link to="/emotion-styles-example/">Emotion Styling</Link>
-    </Nav>
-  </header>
-)
+      <Nav>
+        <Link to="/">Home</Link>
+        <Link to="/about/">About</Link>
+        <Link to="/contact/">Contact</Link>
+        {/* <Link to="/about-css-modules/">CSS Modules</Link>
+      <Link to="/emotion-styles-example/">Emotion Styling</Link> */}
+      </Nav>
+    </header>
+  )
+}
