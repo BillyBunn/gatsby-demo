@@ -1,10 +1,18 @@
-import React from 'react'
+import React from "react"
+
+import { css } from "@emotion/core"
 
 import Header from "../components/header"
 
-export default ({children}) => (
-  <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-  <Header>Header</Header>
+export default ({ children }) => (
+  <div
+    css={css`
+      margin: 3rem auto;
+      max-width: 650px;
+      padding: 0 1rem;
+    `}
+  >
+    <Header>Header</Header>
     {children}
   </div>
 )
