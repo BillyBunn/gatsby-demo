@@ -14,9 +14,9 @@ const HorizontalNav = styled.nav`
       margin-right: 1rem;
       > a {
       }
-      &:first-child {
-        ${"" /* margin-right: 0; */}
-      }
+      ${'' /* &:first-child {
+        margin-right: 0;
+      } */}
     }
   }
 `
@@ -70,6 +70,7 @@ export default props => {
         <Link to="/">Home</Link>
         <Link to="/about/">About</Link>
         <Link to="/contact/">Contact</Link>
+        <Link to="/my-files/">My Files</Link>
         {/* <Link to="/about-css-modules/">CSS Modules</Link>
       <Link to="/emotion-styles-example/">Emotion Styling</Link> */}
       </Nav>

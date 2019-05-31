@@ -11,8 +11,8 @@ export default ({ children }) => (
       margin: 0 auto;
       max-width: 650px;
       ${'' /* padding: 0 1rem; */}
-      padding: ${rhythm(2)};
-      padding-top: ${rhythm(1.5)};
+      ${'' /* padding: ${rhythm(2)}; */}
+      ${'' /* padding-top: ${rhythm(1.5)}; */}
     `}
   >
     <Header>Header</Header>
