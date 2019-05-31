@@ -1,18 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
+
+import Layout from "../components/layout"
 import Header from "../components/header"
 
 export default () => (
-  <div style={{ color: `purple` }}>
-    <Header>Home</Header>
+  <Layout>
     <h2>Hello Billy!</h2>
     <p>Here's some text</p>
     <img
-      style={{ display: `block` }}
+      // style={{ display: `block` }}
       src="https://placekitten.com/400/200"
       alt=""
     />
-    <ul>
+    {/* <ul>
       <li>
         <Link to="/about">About page</Link>
       </li>
@@ -25,6 +26,6 @@ export default () => (
       <li>
         <Link to="/emotion-styles-example/">Styling with Emotion example</Link>
       </li>
-    </ul>
-  </div>
+    </ul> */}
+  </Layout>
 )
